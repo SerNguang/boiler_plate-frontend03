@@ -8,11 +8,11 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class SignupComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private cartService: MockApiCartService,
@@ -23,21 +23,10 @@ export class LoginComponent implements OnInit {
 
   user: User;
 
-  updateShoppingCart(userid) {
-    const observer = {
-      next: (cartlist) => {
-        this.cartService.updatedCartSelection(cartlist);
-      },
-      error: (err) => console.error(err),
-    };
-    this.cartService.getCartByUserId(userid).subscribe(observer);
-  }
-
   onSubmit(f: NgForm) {
     this.store.dispatch(
-      fromAuthActions.loginPage({
-        email: f.value.email,
-        password: f.value.password,
+      fromAuthActions.signupPage({
+        user: f.value.user
       })
     );
   }

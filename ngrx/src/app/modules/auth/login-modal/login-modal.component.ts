@@ -39,7 +39,7 @@ export class LoginModalComponent implements OnInit {
   onSubmit(f: NgForm) {
     this.store.dispatch(
       fromAuthActions.loginModal({
-        username: f.value.username,
+        email: f.value.email,
         password: f.value.password,
       })
     );

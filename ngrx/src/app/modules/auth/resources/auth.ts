@@ -1,13 +1,15 @@
 export interface User {
   id: string;
-  username: string;
   email: string;
-  isadmin: boolean;
+  fullName: string;
+  password: string;
+  isAdmin: boolean;
 }
 
 export var UserModel: User = {
   id: null,
-  username: null,
   email: null,
-  isadmin: false,
+  fullName: null,
+  password: null,
+  isAdmin: false,
 };

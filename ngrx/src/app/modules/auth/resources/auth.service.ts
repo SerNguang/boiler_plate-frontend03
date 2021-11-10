@@ -3,6 +3,7 @@ import * as fromAuthModels from './auth';
 import { of, Observable, BehaviorSubject, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map, switchMap } from 'rxjs/operators';
+import { User } from './auth';
 
 @Injectable({
   providedIn: 'root',
@@ -13,20 +14,19 @@ export class AuthService {
   //  might be totally fake, and Some business logic usually handled on the server
   //   will be done on this page. This page is designed to give a back fake data.
   /********************************************************************************** */
-  baseUrl: string = 'http://localhost:3000/users/';
+  baseUrl: string = 'http://localhost:3000/authentication/';
 
   constructor(private http: HttpClient) {}
-  //Fake Login API
-  login(username: string, password: string): Observable<any> {
-    return this.http.get(this.baseUrl + '?username=' + username).pipe(
-      switchMap((users) => {
-        let user = users[0];
-        if (user) {
-          return of(user);
-        } else {
-          return throwError('Unable to login');
-        }
-      })
-    );
+  login(email: string, password: string): Observable<any> {
+    return this.http.post<any>(this.baseUrl + 'login', {email, password})
   }
+
+  signup( user: User): Observable<User> {
+    return this.http.post<User>(this.baseUrl + 'register', user)
+  }  
+
+
+  // createProduct(model: Product): Observable<Product> {
+  //   return this.http.post<Product>(this.baseUrl + 'products', model);
+  // }
 }
