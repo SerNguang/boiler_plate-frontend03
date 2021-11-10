@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { selectIsAdmin, selectIsLoggedIn } from './auth.selectors';
+import { selectisAdmin, selectIsLoggedIn } from './auth.selectors';
 
 /********************************************************************************* */
 /****RETURN Header View Model */
@@ -11,7 +11,7 @@ export interface HeaderViewModel {
 }
 
 export const selectHeaderViewModel = createSelector(
-  selectIsAdmin,
+  selectisAdmin,
   selectIsLoggedIn,
   (isAdmin: boolean, isLoggedIn: boolean): HeaderViewModel => {
     return {

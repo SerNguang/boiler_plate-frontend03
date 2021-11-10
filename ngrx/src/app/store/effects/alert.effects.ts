@@ -22,7 +22,7 @@ export class AlertEffects {
         ofType(fromAuthActions.loginSuccess),
         tap((action) =>
           this.alertService.success(
-            'Welcome Back ' + action.user.username + ' !'
+            'Welcome Back ' + action.user.email + ' !'
           )
         )
       ),

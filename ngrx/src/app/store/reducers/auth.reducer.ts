@@ -12,15 +12,37 @@ export interface State {
 export const initialState: State = {
   user: {
     id: null,
-    username: null,
     email: null,
-    isadmin: null,
+    fullName: null,
+    password: null,
+    isAdmin: null,
   },
   error: null,
 };
 
 export const reducer = createReducer(
   initialState,
+
+  on(AuthActions.signupSuccess, AuthActions.browserReload, (state, action) => {
+    return {
+      ...state,
+      user: action.user,
+      error: null,
+    };
+  }),
+  on(AuthActions.signupFailure, (state, action) => {
+    return {
+      ...state,
+      user: {
+        id: null,
+        email: null,
+        fullName: null,
+        password: null,
+        isAdmin: null,
+      },
+      error: action.error,
+    };
+  }),
 
   on(AuthActions.loginSuccess, AuthActions.browserReload, (state, action) => {
     return {
@@ -34,9 +56,10 @@ export const reducer = createReducer(
       ...state,
       user: {
         id: null,
-        username: null,
         email: null,
-        isadmin: null,
+        fullName: null,
+        password: null,
+        isAdmin: null,
       },
       error: action.error,
     };
@@ -46,9 +69,10 @@ export const reducer = createReducer(
       ...state,
       user: {
         id: null,
-        username: null,
         email: null,
-        isadmin: null,
+        fullName: null,
+        password: null,
+        isAdmin: null,
       },
       error: null,
     };

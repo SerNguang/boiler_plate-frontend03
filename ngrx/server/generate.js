@@ -43,14 +43,14 @@ database.users.push({
   id: "1",
   username: "admin",
   email: "admin@admin.com",
-  isadmin: true,
+  isAdmin: true,
 });
 
 database.users.push({
   id: "2",
   username: "user",
   email: "user@user.com",
-  isadmin: false,
+  isAdmin: false,
 });
 
 console.log(JSON.stringify(database));
