@@ -22,7 +22,7 @@ export class UserService {
   baseUrl: string = 'http://localhost:3000/';
 
   createUser(model: User): Observable<User> {
-    return this.http.post<User>(this.baseUrl + 'users', model);
+    return this.http.post<User>(this.baseUrl + 'authentication/register', model);
   }
 
   getUsers(url: string): Observable<PaginatedResult<User[]>> {

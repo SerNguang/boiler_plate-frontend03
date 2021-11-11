@@ -18,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'user-add',
-    canActivate: [AdminGuard],
+    // canActivate: [AdminGuard],
     component: UserAddComponent,
   },
   {

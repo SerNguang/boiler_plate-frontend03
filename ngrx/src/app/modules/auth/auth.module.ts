@@ -10,10 +10,10 @@ import { StoreModule } from '@ngrx/store';
 import * as fromAuth from '../../store/reducers/auth.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from '../../store/effects/auth.effects';
-import { SignupComponent } from './signup/signup.component';
+
 
 @NgModule({
-  declarations: [LoginComponent, AuthLinksComponent, LoginModalComponent, SignupComponent],
+  declarations: [LoginComponent, AuthLinksComponent, LoginModalComponent],
   imports: [CommonModule, AuthRoutingModule, FormsModule, StoreModule.forFeature(fromAuth.authFeatureKey, fromAuth.reducer), EffectsModule.forFeature([AuthEffects])],
   exports: [AuthLinksComponent],
 })

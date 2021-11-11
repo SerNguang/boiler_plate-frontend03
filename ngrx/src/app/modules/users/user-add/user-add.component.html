@@ -6,24 +6,31 @@
 				<label for="userName">Name</label>
 				<input type="text" ngModel required name="name" class="form-control" id="userName" placeholder="Name">
 			</div>
-			<div class="mb-3 form-group">
-				<label for="userbusinessName">Business Name</label>
-				<textarea class="form-control" ngModel name="businessName" class="form-control" id="userbusinessName"
-						  placeholder="Business Name"></textarea>
+			<div class="form-group">
+				<label for="userName">Email</label>
+				<input type="email" ngModel required name="email" class="form-control" id="userName" placeholder="Email">
 			</div>
-			<div class="form-row">
+			<div class="form-group">
+				<label for="userPassword">Password</label>
+				<input type="password" ngModel required name="password" class="form-control" id="userPassword" placeholder="Password">
+			</div>
+
+
+			<button type="submit" [disabled]=f.invalid class="btn btn-primary btn-lg"><span>Signup <i class="fas fa-sign-in-alt"></i></span></button>
+
+			<!-- <div class="form-row">
 				<div class="form-group col-md-6">
 					<label for="useremail">Email</label>
 					<input type="email" name="email" ngModel required class="form-control" id="useremail" placeholder="Email">
 				</div>
 				<div class="form-group col-md-6">
-					<label for="userphoneNumber">Phone No</label>
-					<input type="text" name="phoneNo" required ngModel class="form-control" id="userphoneNumber" placeholder="Phone No">
+					<label for="userpassword">Password</label>
+					<input type="password" name="password" required ngModel class="form-control" id="userpassword" placeholder="Password">
 				</div>
-			</div>
+			</div> -->
 
-			<button class="btn btn-primary m-1" [routerLink]="['/admin/user-list']"><i class="fas fa-arrow-left"></i> Back To List</button>
-			<button class="btn btn-success m-1" type="submit" [disabled]="f.invalid">Add User <i class="fas fa-plus"></i></button>
+			<!-- <button class="btn btn-primary m-1" [routerLink]="['/admin/user-list']"><i class="fas fa-arrow-left"></i> Back To List</button>
+			<button class="btn btn-success m-1" type="submit" [disabled]="f.invalid">Add User <i class="fas fa-plus"></i></button> -->
 		</form>
 
 	</div>

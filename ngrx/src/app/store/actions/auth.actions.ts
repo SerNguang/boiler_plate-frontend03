@@ -1,6 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { User } from 'src/app/modules/auth/resources/auth';
 
+
 export const signupPage = createAction(
   '[Signup Component] Signup User',
   props<{ user: User }>()
