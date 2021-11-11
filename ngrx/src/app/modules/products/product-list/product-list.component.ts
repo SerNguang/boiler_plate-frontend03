@@ -25,8 +25,6 @@ export class ProductListComponent implements OnInit {
     this.vm$ = this.store.pipe(select(ProductSelector.selectProductsViewModel));
     this.loadProducts(
       this.paginationService.createUrl(
-        '0',
-        '999',
         '1',
         '25',
         environment.baseUrl + 'products?'

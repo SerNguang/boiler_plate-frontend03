@@ -37,8 +37,6 @@ export class PaginationService {
   }
 
   createUrl(
-    pricemin = '0',
-    pricemax = '999',
     page = '1',
     limit = '9',
     baseurl
@@ -46,14 +44,6 @@ export class PaginationService {
     var prepend = '';
     //var query = this.baseUrl + 'products?';
     var query = baseurl;
-    if (pricemin) {
-      query = `${query}` + prepend + `price_gte=${pricemin}`;
-      prepend = '&';
-    }
-    if (pricemax) {
-      query = `${query}` + prepend + `price_lte=${pricemax}`;
-      prepend = '&';
-    }
     if (page) {
       query = `${query}` + prepend + `_page=${page}`;
       prepend = '&';

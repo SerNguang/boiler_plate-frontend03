@@ -27,6 +27,7 @@ export class SignupComponent implements OnInit {
     this.store.dispatch(
       fromAuthActions.signupPage({
         user: f.value.user
+        
       })
     );
   }

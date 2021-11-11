@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+	<div class="col-8 mt-4" *ngIf="user$ | async as user">
+		<h4>User Detail</h4>
+		<div class="row mt-4">
+			<div class="col-md-5 col-lg-7">
+				<img class="card-img-top" src="{{user.avatar}}" alt="Card image cap">
+				<div class=" mt-4">
+					<div>
+						<p>Business Name: {{user.businessName}}</p>
+					</div>
+					<div>
+						<p>
+							Name: {{user.name}}
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-7 col-lg-5">
+				<div class="card-body">
+					<h5 class="card-title">{{user.phoneNumber}}</h5>
+					<p class="card-text">{{user.email}}
+					</p>
+				</div>
+				<div class="text-center">
+					<div class="btn-group" role="group" aria-label="Basic example">
+						
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mt-4">
+			<button class="btn btn-primary" [routerLink]="['/shopping/users']" routerLinkActive="router-link-active"><i
+				   class="fas fa-arrow-left"></i>
+				Back To Shopping</button>
+		</div>
+	</div>
+
+</div>

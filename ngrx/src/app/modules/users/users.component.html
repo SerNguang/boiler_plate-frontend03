@@ -1,1 +1,42 @@
-<p>users works!</p>
+<div class="row justify-content-center" *ngIf="vm$ |async as vm">
+	<div class="filter col-3  mt-4">
+		<p>Filter Users by:</p>
+		<app-user-filter-widget (selectedRadioEvent)="onUserFilterChange($event)"></app-user-filter-widget>
+	</div>
+	<div class="col-9 mt-4">
+		<h4>Users</h4>
+
+		<div class="row">
+
+			<div class="col-lg-4 col-md-6 mt-3" *ngFor="let user of vm.users">
+				<div class="card">
+					<img src="{{user.avatar}}" class="card-img-top" alt="User Image">
+					<div class="card-body">
+						<h6 class="card-title">{{user.name}}</h6>
+						<p class="card-text">Business Name : {{user.businessName}}</p>
+						<p class="card-text">Email : {{user.email}}</p>
+
+
+						<p class="card-text">Phone No : {{user.phoneNumber}}</p>
+					</div>
+					<div class="text-center mb-1">
+						<div class="btn-group" role="group" aria-label="Basic example">
+							<button type="button" class="btn btn-info" [routerLink]="['/shopping/user-view', user.id]"
+									title="View User Details"><i class="fas fa-search"></i> View</button>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="row">
+			<div class=" mb-1 mt-5 col-5 offset-7">
+				<app-pagination-buttons-widget [pagination]="vm.pagination" (selecedUrl)="onPaginationChange($event);">
+				</app-pagination-buttons-widget>
+			</div>
+		</div>
+
+	</div>
+</div>

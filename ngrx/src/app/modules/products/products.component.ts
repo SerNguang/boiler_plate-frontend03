@@ -25,8 +25,6 @@ export class ProductsComponent implements OnInit {
     this.vm$ = this.store.pipe(select(ProductSelector.selectProductsViewModel));
     this.loadProducts(
       this.paginationService.createUrl(
-        '0',
-        '999',
         '1',
         '9',
         environment.baseUrl + 'products?'
@@ -45,8 +43,7 @@ export class ProductsComponent implements OnInit {
   onPriceFilterChange(item: fromProductModels.PriceFilter) {
     this.loadProducts(
       this.paginationService.createUrl(
-        item.min,
-        item.max,
+
         '1',
         '25',
         environment.baseUrl + 'products?'

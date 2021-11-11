@@ -1,0 +1,30 @@
+<div class="row justify-content-center">
+	<div class="col-8 mt-4">
+		<h4>Signup</h4>
+		<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+			<div class="form-group">
+				<label for="userName">Name</label>
+				<input type="text" ngModel required name="name" class="form-control" id="userName" placeholder="Name">
+			</div>
+			<div class="mb-3 form-group">
+				<label for="userbusinessName">Business Name</label>
+				<textarea class="form-control" ngModel name="businessName" class="form-control" id="userbusinessName"
+						  placeholder="Business Name"></textarea>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="useremail">Email</label>
+					<input type="email" name="email" ngModel required class="form-control" id="useremail" placeholder="Email">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="userphoneNumber">Phone No</label>
+					<input type="text" name="phoneNo" required ngModel class="form-control" id="userphoneNumber" placeholder="Phone No">
+				</div>
+			</div>
+
+			<button class="btn btn-primary m-1" [routerLink]="['/admin/user-list']"><i class="fas fa-arrow-left"></i> Back To List</button>
+			<button class="btn btn-success m-1" type="submit" [disabled]="f.invalid">Add User <i class="fas fa-plus"></i></button>
+		</form>
+
+	</div>
+</div>

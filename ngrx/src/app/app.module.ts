@@ -30,7 +30,7 @@ import { RouteEffects } from './store/effects/route.effects';
 import { ModalEffects } from './store/effects/modal.effects';
 import { AppEffects } from './store/effects/app.effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { UsersComponent } from './modules/users/users.component';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +39,7 @@ import { UsersComponent } from './modules/users/users.component';
     TopBarComponent,
     HeaderComponent,
     FooterComponent,
-    UsersComponent,
+
   ],
   imports: [
     BrowserModule,

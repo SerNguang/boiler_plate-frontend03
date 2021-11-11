@@ -13,7 +13,7 @@ export const initialState: State = {
   user: {
     id: null,
     email: null,
-    fullName: null,
+    name: null,
     password: null,
     isAdmin: null,
   },
@@ -36,7 +36,7 @@ export const reducer = createReducer(
       user: {
         id: null,
         email: null,
-        fullName: null,
+        name: null,
         password: null,
         isAdmin: null,
       },
@@ -57,7 +57,7 @@ export const reducer = createReducer(
       user: {
         id: null,
         email: null,
-        fullName: null,
+        name: null,
         password: null,
         isAdmin: null,
       },
@@ -70,7 +70,7 @@ export const reducer = createReducer(
       user: {
         id: null,
         email: null,
-        fullName: null,
+        name: null,
         password: null,
         isAdmin: null,
       },

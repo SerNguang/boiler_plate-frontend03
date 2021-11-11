@@ -35,6 +35,14 @@ const routes: Routes = [
             (m) => m.CategoryModule
           ),
       },
+      {
+        path: 'users',
+        loadChildren: () =>
+          import('./modules/users/users.module').then(
+            (m) => m.UsersModule
+          ),
+      },
+      
     ],
   },
   { path: '**', redirectTo: 'not-found' },

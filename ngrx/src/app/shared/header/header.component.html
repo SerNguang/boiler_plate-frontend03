@@ -8,6 +8,10 @@
 					<li class="nav-item">
 						<a class="nav-link" [routerLink]="['/shopping/products']">Go Shopping</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" [routerLink]="['/users/user-add']">signup</a>
+					</li>
+
 					<div class="btn-group" dropdown *ngIf="vm.isAdmin">
 						<button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-basic">
 							Admin <span class="caret"></span>

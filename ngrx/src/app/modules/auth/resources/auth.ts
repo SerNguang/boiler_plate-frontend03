@@ -1,7 +1,7 @@
 export interface User {
   id: string;
   email: string;
-  fullName: string;
+  name: string;
   password: string;
   isAdmin: boolean;
 }
@@ -9,7 +9,7 @@ export interface User {
 export var UserModel: User = {
   id: null,
   email: null,
-  fullName: null,
+  name: null,
   password: null,
   isAdmin: false,
 };
