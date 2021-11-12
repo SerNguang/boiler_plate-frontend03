@@ -3,31 +3,47 @@
 		<h4>Signup</h4>
 		<form #f="ngForm" (ngSubmit)="onSubmit(f)">
 			<div class="form-group">
-				<label for="userName">Name</label>
-				<input type="text" ngModel required name="name" class="form-control" id="userName" placeholder="Name">
+				<label for="name">Name</label>
+				<input type="text" ngModel required name="name" class="form-control" id="name" placeholder="Name">
 			</div>
 			<div class="form-group">
-				<label for="userName">Email</label>
-				<input type="email" ngModel required name="email" class="form-control" id="userName" placeholder="Email">
+				<label for="businessName">BusinessName</label>
+				<input type="text" ngModel required name="businessName" class="form-control" id="businessName" placeholder="BusinessName">
 			</div>
 			<div class="form-group">
-				<label for="userPassword">Password</label>
-				<input type="password" ngModel required name="password" class="form-control" id="userPassword" placeholder="Password">
+				<label for="email">Email</label>
+				<input type="email" ngModel required name="email" class="form-control" id="email" placeholder="Email">
+			</div>
+			<div class="form-group">
+				<label for="phoneNumber">Phone No</label>
+				<input type="text" ngModel required name="phoneNumber" class="form-control" id="phoneNumber" placeholder="PhoneNumber">
+			</div>
+			<div class="form-group">
+				<label for="ceaReg">CEA Reg</label>
+				<input type="text" ngModel required name="ceaReg" class="form-control" id="ceaReg" placeholder="CEA Reg">
+			</div>
+			<div class="form-group">
+				<label for="agencyReg">Agency Reg</label>
+				<input type="text" ngModel required name="agencyReg" class="form-control" id="agencyReg" placeholder="AgencyReg">
+			</div>	
+			<div class="form-group">
+				<label for="designation">Designation</label>
+				<input type="text" ngModel required name="designation" class="form-control" id="designation" placeholder="Designation">
+			</div>	
+			<div class="form-group">
+				<label for="aboutMe">About me</label>
+				<input type="text" ngModel required name="aboutMe" class="form-control" id="aboutMe" placeholder="About me">
+			</div>	
+			
+
+
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" ngModel required name="password" class="form-control" id="password" placeholder="Password">
 			</div>
 
 
 			<button type="submit" [disabled]=f.invalid class="btn btn-primary btn-lg"><span>Signup <i class="fas fa-sign-in-alt"></i></span></button>
-
-			<!-- <div class="form-row">
-				<div class="form-group col-md-6">
-					<label for="useremail">Email</label>
-					<input type="email" name="email" ngModel required class="form-control" id="useremail" placeholder="Email">
-				</div>
-				<div class="form-group col-md-6">
-					<label for="userpassword">Password</label>
-					<input type="password" name="password" required ngModel class="form-control" id="userpassword" placeholder="Password">
-				</div>
-			</div> -->
 
 			<!-- <button class="btn btn-primary m-1" [routerLink]="['/admin/user-list']"><i class="fas fa-arrow-left"></i> Back To List</button>
 			<button class="btn btn-success m-1" type="submit" [disabled]="f.invalid">Add User <i class="fas fa-plus"></i></button> -->
